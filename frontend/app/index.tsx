@@ -1,9 +1,14 @@
-import { Text, View } from 'react-native';
+import React from 'react';
+import { View, Text, TouchableOpacity, StyleSheet, Alert } from 'react-native';
+import RoleSelectionScreen from './screens/RoleSelectionScreen';
+import { Link } from 'expo-router';
 
 export default function Index() {
+
   return (
-    <View className="flex-1 items-center justify-center bg-blue-500">
-      <Text className="text-white text-xl font-bold">Hello Tailwind</Text>
+    <View>
+      <RoleSelectionScreen/>
+      
     </View>
   );
 }
