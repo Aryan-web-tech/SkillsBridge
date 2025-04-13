@@ -11,5 +11,3 @@ providerRouter.post('/submit-quote', submitJobQuote);
 
 
 
-
-// providerRouter.post("/job/:jobId/quote", submitJobQuote);

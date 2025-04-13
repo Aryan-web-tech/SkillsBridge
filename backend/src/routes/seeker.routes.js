@@ -1,8 +1,5 @@
 import { Router } from "express";
-import {
-  createJobRequest,
-  // getQuotesForJob
-} from "../controllers/seekerController.js";
+import { createJobRequest, getQuotesForJob } from "../controllers/seekerController.js";
 
 export const seekerRouter = Router();
 
@@ -10,4 +7,4 @@ export const seekerRouter = Router();
 seekerRouter.post("/create-job", createJobRequest);
 
 // Seeker fetches all quotes for a job
-// seekerRouter.get("/job/:jobId/quotes", getQuotesForJob);
+seekerRouter.get("/jobs/:jobId/quotes", getQuotesForJob);
