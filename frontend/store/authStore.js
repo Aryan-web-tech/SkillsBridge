@@ -44,18 +44,18 @@ export const useAuthStore = create( (set) => ({
         }
     },
 
-    registerProvider: async (name,email,number,password)=>{
+    registerProvider: async (name,email,phone,password,serviceCategory,speciality,experience)=>{
         set({isLoading: true})
         
         try{
             
-            const response = await fetch("http://192.168.1.2:5000/api/auth/seeker/register" , {
+            const response = await fetch("http://192.168.1.2:5000/api/auth/provider/register" , {
               method:"POST",
               headers:{
                 "Content-Type":"application/json"
               },
               body: JSON.stringify({
-                name,email,number,password
+                name,email,phone,password,serviceCategory,speciality,experience
               })
             })
       

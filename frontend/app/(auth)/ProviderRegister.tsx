@@ -28,7 +28,7 @@ const ProviderRegister = () => {
         Alert.alert('Registered successfully!', '', [
             {
               text: 'OK',
-              onPress: () => router.replace('/screens/SeekerHome'), // Navigate after pressing OK
+              onPress: () => router.replace('/screens/ProviderHome'), // Navigate after pressing OK
             },
           ]); 
   };
@@ -39,7 +39,7 @@ const ProviderRegister = () => {
         <Text className="text-2xl font-bold text-primary">Provider Registration</Text>
       </View>
 
-      <Text className="mb-2 font-semibold text-neutralDark">Organization Name</Text>
+      <Text className="mb-2 font-semibold text-neutralDark">Name</Text>
       <TextInput
         className="border border-gray-300 rounded-md px-4 py-3 mb-4"
         placeholder="Enter organization name"
@@ -109,11 +109,9 @@ const ProviderRegister = () => {
 
       <View className="mt-4 flex-row justify-center">
         <Text className="text-base text-neutralDark">Already have an account ?</Text>
-        <Link href="/" asChild>
-          <TouchableOpacity>
-            <Text className="text-primary text-base font-semibold">Log In</Text>
-          </TouchableOpacity>
-        </Link>
+        <TouchableOpacity className="bg-secondary py-3 rounded-md items-center shadow-subtle" onPress = {() =>router.replace('/(auth)/Login')} >
+        <Text className="text-neutralLight font-bold text-base">Login</Text>
+      </TouchableOpacity>
       </View>
     </ScrollView>
   );

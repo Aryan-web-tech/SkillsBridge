@@ -61,12 +61,10 @@ const providerRegister =async (req, res) =>
         const {
           name,
           email,
-          number,
-          location,
-          servicecategory,
+          phone,
+          serviceCategory,
           speciality,
           experience,
-          docs,
           password
         } = req.body;
     
@@ -76,20 +74,12 @@ const providerRegister =async (req, res) =>
         const hashedPassword = await bcrypt.hash(password, 10);
     
         const provider = new ServiceProvider({
-          name,
-          email,
-          number,
-          location,
-          servicecategory,
-          speciality,
-          experience,
-          docs,
-          password: hashedPassword
+          name,email,phone,password:hashedPassword,serviceCategory,speciality,experience
         });
     
         await provider.save();
     
-        const token = jwt.sign({ id: newProvider._id, role: 'provider' }, process.env.JWT_SECRET, { expiresIn: '1d' });
+        const token = jwt.sign({ id: provider._id, role: 'provider' }, process.env.JWT_SECRET, { expiresIn: '1d' });
         const role = "provider"
         res.json({ message: 'Registration successful for provider', token, provider,role });
     
