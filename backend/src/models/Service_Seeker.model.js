@@ -2,7 +2,9 @@ import mongoose from 'mongoose';
 
 const serviceSeekerSchema = new mongoose.Schema({
   fullName: String,
-  email: String,
+  email: { type: String, unique: true, required: true },
+  number: { type: String},
+  password: { type: String, required: true }, // Add this line
   home_address: String,
   home_coordinates: {
     type: {

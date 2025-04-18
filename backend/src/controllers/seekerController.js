@@ -7,6 +7,7 @@ import { Job_Quote_Model } from '../models/JobQuote.model.js';
 export const createJobRequest = async (req, res) => {
   try {
     const { seekerId, job_category, job_description, job_location } = req.body;
+    console.log(job_description);
 
     const seeker = await Service_Seeker_Model.findById(seekerId);
     if (!seeker) {

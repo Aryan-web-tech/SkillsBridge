@@ -1,11 +1,14 @@
 import mongoose from 'mongoose';
 
 const serviceProviderSchema = new mongoose.Schema({
+  fullName: String,
+  email: { type: String, unique: true, required: true },
+  number: { type: String},
+  experience: {type:String},
+  password: { type: String, required: true},
   business_address: String,
   business_type: String,
   business_name: String,
-  email: String,
-  fullName: String,
   business_coordinates: {
     type: {
       type: String,

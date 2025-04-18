@@ -1,8 +1,9 @@
 import express from 'express';
 import { seekerRouter } from './routes/seeker.routes.js';
 import { providerRouter } from './routes/provider.routes.js'
+import { authRouter } from './routes/auth.routes.js'
 import swaggerUi from 'swagger-ui-express';
-import swaggerSpec from './docs/swagger.js'; // <-- Import our Swagger config
+import swaggerSpec from './docs/swagger.js'; // Import our Swagger config
 
 const app = express();
 app.use(express.json());
@@ -12,5 +13,6 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 app.use('/api/seeker', seekerRouter);
 app.use('/api/provider', providerRouter);
+app.use('/api/auth', authRouter);
 
 export default app;
