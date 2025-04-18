@@ -6,7 +6,7 @@ const RoleSelectionScreen = () => {
   const router = useRouter()
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Select Your Role</Text>
+      <Text style={[styles.title]}>Select Your Role</Text>
       <TouchableOpacity
         style={styles.button}
         onPress={() => router.replace('/SeekerRegister')}
@@ -37,9 +37,10 @@ const styles = StyleSheet.create({
     fontSize: 22,
     fontWeight: 'bold',
     marginBottom: 40,
+    color:"#0D0672"
   },
   button: {
-    backgroundColor: '#4a90e2',
+    backgroundColor: '#3A86FF',
     paddingVertical: 15,
     paddingHorizontal: 30,
     borderRadius: 10,

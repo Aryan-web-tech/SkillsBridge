@@ -29,11 +29,11 @@ export default function Index() {
       </View>
 
       {/* Role Toggle */}
-      <View className="flex-row justify-center mb-6 space-x-4">
+      <View className="flex-row justify-center mb-6 space-x-4 ">
         <TouchableOpacity
           onPress={() => setSelectedRole('seeker')}
-          className={`px-4 py-2 rounded-full border ${
-            selectedRole === 'seeker' ? 'bg-primary' : 'bg-white'
+          className={`px-4 py-2 rounded-full  ${
+            selectedRole === 'seeker' ? 'bg-primary ' : 'bg-white '
           }`}
         >
           <Text className={`font-semibold ${selectedRole === 'seeker' ? 'text-white' : 'text-primary'}`}>
@@ -43,7 +43,7 @@ export default function Index() {
 
         <TouchableOpacity
           onPress={() => setSelectedRole('provider')}
-          className={`px-4 py-2 rounded-full border ${
+          className={`px-4 py-2 rounded-full  ${
             selectedRole === 'provider' ? 'bg-primary' : 'bg-white'
           }`}
         >
@@ -53,7 +53,7 @@ export default function Index() {
         </TouchableOpacity>
       </View>
 
-      <Text className="mb-2 text-base font-semibold text-neutralDark">Email</Text>
+      <Text className="mb-2 text-base font-semibold text-darkText">Email</Text>
       <TextInput
         className="border border-gray-300 rounded-md px-4 py-3 mb-4"
         placeholder="Enter your email"
@@ -63,7 +63,7 @@ export default function Index() {
         onChangeText={setEmail}
       />
 
-      <Text className="mb-2 text-base font-semibold text-neutralDark">Password</Text>
+      <Text className="mb-2 text-base font-semibold text-darkText">Password</Text>
       <TextInput
         className="border border-gray-300 rounded-md px-4 py-3 mb-6"
         placeholder="Enter your password"
@@ -76,7 +76,7 @@ export default function Index() {
         onPress={handleLogin}
         className="bg-primary py-3 rounded-md items-center shadow-subtle"
       >
-        <Text className="text-neutralLight text-base font-bold">Log In</Text>
+        <Text className="text-white text-base font-bold">Log In</Text>
       </TouchableOpacity>
 
       <View className="mt-4 flex-row justify-center">
