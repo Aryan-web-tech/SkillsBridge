@@ -19,13 +19,13 @@ export default function ProviderProfile() {
   return (
     <View className="flex-1 bg-white">
       {/* Header */}
-      <View className="bg-[#00CFE8] p-4 flex-row items-center justify-between shadow-md">
+      <View className="bg-primary p-4 flex-row items-center justify-between shadow-md">
         <View className="flex-row items-center">
           <Image
             source={require('@/assets/icon.png')} // adjust if needed
             style={{ width: 40, height: 40, marginRight: 6 }}
           />
-          <Text className="text-black font-bold text-xl">SeekerPal</Text>
+          <Text className="text-white font-bold text-xl">FixIt Services</Text>
         </View>
         <TouchableOpacity onPress={() => router.back()}>
           <Text className="text-white text-2xl">➡️</Text>
@@ -33,7 +33,7 @@ export default function ProviderProfile() {
       </View>
 
       {/* Title */}
-      <View className="bg-[#00CFE8] px-6 py-3">
+      <View className="bg-accent px-6 py-3">
         <Text className="text-white text-xl font-medium">Provider Profile</Text>
       </View>
 
@@ -46,7 +46,7 @@ export default function ProviderProfile() {
             }}
             style={{ width: 60, height: 60, marginRight: 12 }}
           />
-          <Text className="text-xl font-semibold">Welcome{'\n'}{name}</Text>
+          <Text className="text-xl font-semibold text-darkText">Welcome{'\n'}{name}</Text>
         </View>
 
         {/* Input Fields */}
@@ -90,7 +90,7 @@ export default function ProviderProfile() {
 
         {/* Update Button */}
         <TouchableOpacity
-          className="bg-[#00CFE8] py-3 rounded-md items-center"
+          className="bg-primary py-3 rounded-md items-center"
           onPress={() => alert('Profile updated!')}
         >
           <Text className="text-white text-lg font-bold">Update</Text>

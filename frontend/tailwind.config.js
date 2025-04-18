@@ -1,4 +1,4 @@
-/** @type {import('tailwindcss').Config} */
+/* /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     "./app/**/*.{js,jsx,ts,tsx}",
@@ -14,7 +14,7 @@ module.exports = {
         neutralBase: '#F6F8FC',     // Background
         darkText: '#0D0672',        // For main text
         secondarySky: '#8ECAE6',    // Sky Blue for buttons/icons
-        secondaryOrange: '#FB8500', // Deep orange for CTA
+        secondaryOrange: '#FB8500', // Deep orange for CTA
       },
       borderRadius: {
         'md': '0.5rem',
@@ -31,4 +31,6 @@ module.exports = {
   },
   plugins: [],
   presets: [require("nativewind/preset")],
-}
+} 
+
+

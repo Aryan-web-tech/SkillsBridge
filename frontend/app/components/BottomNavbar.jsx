@@ -14,25 +14,25 @@ export default function BottomNavbar() {
     <View className="flex-row justify-around items-center bg-white py-3 border-t border-gray-200">
       {/* Home */}
       <TouchableOpacity className="flex-1 items-center" onPress={() => router.push('/')}>
-        <HomeIcon size={24} color={pathname === '/' ? '#2563EB' : 'black'} />
+        <HomeIcon size={24} color={pathname === '/' ? '#FB8500' : '#FB8500'} />
         <Text className={`text-xs ${pathname === '/' ? 'text-blue-600 font-semibold' : ''}`}>Home</Text>
       </TouchableOpacity>
 
       {/* Bookings */}
       <TouchableOpacity className="flex-1 items-center" onPress={() => router.push('/screens/bookings_2')}>
-        <CalendarDaysIcon size={24} color={pathname === '/provider/bookings' ? '#2563EB' : 'black'} />
+        <CalendarDaysIcon size={24} color={pathname === '/provider/bookings' ? '#FB8500' : '#FB8500'} />
         <Text className={`text-xs ${pathname === '/provider/bookings' ? 'text-blue-600 font-semibold' : ''}`}>Bookings</Text>
       </TouchableOpacity>
 
       {/* Messages */}
       <TouchableOpacity className="flex-1 items-center" onPress={() => router.push('/messages')}>
-        <ChatBubbleBottomCenterIcon size={24} color={pathname === '/messages' ? '#2563EB' : 'black'} />
+        <ChatBubbleBottomCenterIcon size={24} color={pathname === '/messages' ? '#FB8500' : '#FB8500'} />
         <Text className={`text-xs ${pathname === '/messages' ? 'text-blue-600 font-semibold' : ''}`}>Messages</Text>
       </TouchableOpacity>
 
       {/* Profile */}
       <TouchableOpacity className="flex-1 items-center" onPress={() => router.push('/screens/ProviderProfile')}>
-        <UserCircleIcon size={24} color={pathname === '/profile' ? '#2563EB' : 'black'} />
+        <UserCircleIcon size={24} color={pathname === '/profile' ? '#FB8500' : '#FB8500'} />
         <Text className={`text-xs ${pathname === '/profile' ? 'text-blue-600 font-semibold' : ''}`}>Profile</Text>
       </TouchableOpacity>
     </View>
