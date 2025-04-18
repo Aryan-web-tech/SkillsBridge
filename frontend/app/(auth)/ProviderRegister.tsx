@@ -34,9 +34,9 @@ const ProviderRegister = () => {
   };
 
   return (
-    <ScrollView contentContainerStyle={{ flexGrow: 1 }} className="p-6 bg-neutralLight">
+    <ScrollView contentContainerStyle={{ flexGrow: 1 }} className="p-6 bg-white">
       <View className="items-center mb-6">
-        <Text className="text-2xl font-bold text-primary">Provider Registration</Text>
+        <Text className="text-2xl font-extrabold text-primary text-primary">Provider Registration</Text>
       </View>
 
       <Text className="mb-2 font-semibold text-neutralDark">Name</Text>
@@ -102,15 +102,14 @@ const ProviderRegister = () => {
 
       <TouchableOpacity
         onPress={handleRegister}
-        className="bg-secondary py-3 rounded-md items-center shadow-subtle"
+        className="bg-primary py-3 rounded-md items-center shadow-subtle"
       >
-        <Text className="text-neutralLight font-bold text-base">Register</Text>
+        <Text className="text-white font-bold text-base">Register</Text>
       </TouchableOpacity>
 
-      <View className="mt-4 flex-row justify-center">
-        <Text className="text-base text-neutralDark">Already have an account ?</Text>
+      <View className="mt-4 flex-row justify-left">
+        <Text className="text-base text-darkText">Already have an account ? </Text><Text className="text-accent font-bold text-base">Login</Text>
         <TouchableOpacity className="bg-secondary py-3 rounded-md items-center shadow-subtle" onPress = {() =>router.replace('/(auth)/Login')} >
-        <Text className="text-neutralLight font-bold text-base">Login</Text>
       </TouchableOpacity>
       </View>
     </ScrollView>
