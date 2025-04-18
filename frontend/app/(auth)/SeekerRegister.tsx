@@ -83,11 +83,11 @@ const SeekerRegister = () => {
         <Text className="text-white text-base font-bold">Register</Text>
       </TouchableOpacity>
 
-      <View className="mb-2 text-base font-semibold">
-                        <Text >Already have an account ?</Text>
+      <View className="mb-2 text-darkText font-semibold">
+                        <Text className="text-darkText" >Already have an account ?</Text>
                         <Link href="/" asChild>
                         <TouchableOpacity>
-                            <Text>Log In</Text>
+                            <Text className="text-darkText">Log In</Text>
                             </TouchableOpacity></Link>
                         </View>
     </ScrollView>
