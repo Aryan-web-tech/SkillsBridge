@@ -8,6 +8,7 @@ import {
 } from 'react-native'
 import { useRouter } from 'expo-router'
 import { FontAwesome } from '@expo/vector-icons'
+import Header from '../components/Header'
 
 export default function ProviderProfile() {
   const router = useRouter()
@@ -18,19 +19,8 @@ export default function ProviderProfile() {
 
   return (
     <View className="flex-1 bg-white">
-      {/* Header */}
-      <View className="bg-primary p-4 flex-row items-center justify-between shadow-md">
-        <View className="flex-row items-center">
-          <Image
-            source={require('@/assets/icon.png')} // adjust if needed
-            style={{ width: 40, height: 40, marginRight: 6 }}
-          />
-          <Text className="text-white font-bold text-xl">FixIt Services</Text>
-        </View>
-        <TouchableOpacity onPress={() => router.back()}>
-          <Text className="text-white text-2xl">➡️</Text>
-        </TouchableOpacity>
-      </View>
+      <Header/>
+      
 
       {/* Title */}
       <View className="bg-accent px-6 py-3">

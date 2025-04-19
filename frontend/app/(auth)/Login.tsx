@@ -4,6 +4,7 @@ import { Ionicons } from '@expo/vector-icons'
 import { ScrollView, TextInput, TouchableOpacity } from 'react-native'
 import { Link, useRouter } from 'expo-router'
 import { useAuthStore } from '@/store/authStore'
+import Header from '../components/Header'
 
 export default function Index() {
   const [email, setEmail] = useState('')
@@ -18,12 +19,14 @@ export default function Index() {
 
     if (!result.success) Alert.alert('Error:', result.error)
 
-    if(selectedRole=="seeker") router.replace('/screens/SeekerHome')
-    else router.replace('/screens/ProviderHome')
+    if(selectedRole=="seeker") router.replace('/(seeker_tabs)/Seeker_Home')
+    else router.replace('/(provider_tabs)/Provider_Home')
   }
 
   return (
-    <ScrollView contentContainerStyle={{ flexGrow: 1 }} className="p-6 bg-neutralLight">
+      <View>
+      <Header />
+      <ScrollView contentContainerStyle={{ flexGrow: 1 }} className="p-6 bg-neutralLight">
       <View className="items-center mb-6">
         <Text className="text-2xl font-bold text-primary">Log In</Text>
       </View>
@@ -88,5 +91,6 @@ export default function Index() {
         </Link>
       </View>
     </ScrollView>
+    </View>
   )
 }

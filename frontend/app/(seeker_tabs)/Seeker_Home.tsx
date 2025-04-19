@@ -7,6 +7,7 @@ import {
 } from 'react-native';
 import { FontAwesome, Feather } from '@expo/vector-icons';
 import { Link } from 'expo-router';
+import Header from '../components/Header';
 
 const theme = {
   primary: '#3A86FF',
@@ -68,14 +69,15 @@ export default function HomeScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
+      <Header />
     <ScrollView style={styles.scrollView}>
       {/* Top bar */}
       <View style={styles.topBar}>
         <View style={styles.addressContainer}>
-          <Text style={[styles.addressLabel,{color:theme.darkText}]}>Delivery Address</Text>
+          <Text style={[styles.addressLabel,{color:theme.darkText}]}>Home Address</Text>
           <Text style={[styles.address,{color:theme.darkText}]}>320 North Los Angeles Street...</Text>
         </View>
-        <FontAwesome name="bell-o" size={20} color={theme.secondaryOrange} />
+        <FontAwesome name="bell-o" size={20} color={"#FFBE0B"} />
       </View>
 
       {/* Search */}
@@ -86,7 +88,7 @@ export default function HomeScreen() {
           placeholderTextColor="gray"
           style={styles.searchInput}
         />
-        <FontAwesome name="sliders" size={18} color={theme.secondaryOrange} />
+        <FontAwesome name="sliders" size={18} color={"#FFBE0B"} />
       </View>
 
       {/* Services */}
@@ -106,30 +108,6 @@ export default function HomeScreen() {
         ))}
       </View>
     </ScrollView>
-
-    {/* Bottom Navigation Bar */}
-    <View style={styles.navBar}>
-      <View style={styles.navIcons}>
-        <TouchableOpacity style={styles.navLink} onPress={() => router.replace('/screens/SeekerHome')}>
-          <FontAwesome name="home" size={24} color={theme.secondaryOrange} />
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.navLink} onPress={() => router.replace('/screens/bookings')}>
-          <FontAwesome name="file" size={24} color={theme.secondaryOrange} />
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.navLink} onPress={() => router.replace('/screens/quotes')}>
-          <FontAwesome name="file-text" size={24} color={theme.secondaryOrange} />
-        </TouchableOpacity>
-        <TouchableOpacity onPress={handleLogout}>
-          <FontAwesome name="sign-out" size={24} color={theme.secondaryOrange} />
-        </TouchableOpacity>
-      </View>
-      <View style={styles.navLabels}>
-        <Text style={styles.navText}>Home</Text>
-        <Text style={styles.navText}>Bookings</Text>
-        <Text style={styles.navText}>Quotes</Text>
-        <Text style={styles.navText}>Logout</Text>
-      </View>
-    </View>
   </SafeAreaView>
 );
 }

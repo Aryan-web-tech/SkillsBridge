@@ -3,6 +3,7 @@ import React, { useState,useContext } from 'react';
 import { navigate } from 'expo-router/build/global-state/routing';
 import { useRouter,Link } from 'expo-router';
 import {useAuthStore} from "../../store/authStore"
+import Header from '../components/Header';
 
 
 const SeekerRegister = () => {
@@ -28,13 +29,14 @@ const SeekerRegister = () => {
     Alert.alert('Registered successfully!', '', [
         {
           text: 'OK',
-          onPress: () => router.replace('/screens/SeekerHome'), // Navigate after pressing OK
+          onPress: () => router.replace('/(seeker_tabs)/Seeker_Home'), // Navigate after pressing OK
         },
       ]);  
   };
 
   return (
     <ScrollView contentContainerStyle={{ flexGrow: 1 }} className="p-6 bg-white">
+      <Header/>
       <View className="items-center mb-6">
         <Text className="text-2xl font-bold text-blue-600">Seeker Registration</Text>
       </View>

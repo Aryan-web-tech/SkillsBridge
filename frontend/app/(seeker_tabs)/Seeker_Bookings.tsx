@@ -12,6 +12,7 @@ import { FontAwesome } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import { useAuthStore } from '@/store/authStore';
 import 'nativewind';
+import Header from '../components/Header';
 
 const inProgress = [
   {
@@ -86,6 +87,7 @@ export default function QuotesScreen() {
 
   return (
     <SafeAreaView className="flex-1 bg-neutralBase">
+      <Header/>
       <Text className="text-darkText text-2xl font-bold text-center mb-4">My Bookings</Text>
 
       <View className="flex-row justify-center mb-4">
@@ -119,29 +121,6 @@ export default function QuotesScreen() {
         renderItem={renderItem}
         contentContainerStyle={{ paddingBottom: 100 }}
       />
-
-      <View className="h-20 rounded-t-2xl pt-2">
-        <View className="flex-row justify-around items-center h-10">
-          <TouchableOpacity onPress={() => router.replace('/screens/SeekerHome')}>
-            <FontAwesome name="home" size={24} color="#FB8500" />
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => router.replace('/screens/bookings')}>
-            <FontAwesome name="file" size={24} color="#FB8500" />
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => router.replace('/screens/quotes')}>
-            <FontAwesome name="file-text" size={24} color="#FB8500" />
-          </TouchableOpacity>
-          <TouchableOpacity onPress={handleLogout}>
-            <FontAwesome name="sign-out" size={24} color="#FB8500" />
-          </TouchableOpacity>
-        </View>
-        <View className="flex-row justify-around mt-1">
-          <Text className="text-darkText text-xs">Home</Text>
-          <Text className="text-darkText text-xs">Bookings</Text>
-          <Text className="text-darkText text-xs">Quotes</Text>
-          <Text className="text-darkText text-xs">Logout</Text>
-        </View>
-      </View>
     </SafeAreaView>
   );
 }

@@ -1,7 +1,9 @@
+// Main page of app
 import { View, Text, TouchableOpacity, Image } from 'react-native'
 import React, { useEffect } from 'react'
 import { useRouter } from 'expo-router'
 import { useAuthStore } from '@/store/authStore'
+import Header from '../components/Header'
 
 
 export default function Index() {
@@ -11,21 +13,14 @@ export default function Index() {
   useEffect(() => {
     checkAuth()
     if (token && role) {
-      if (role === 'seeker') router.replace('/screens/SeekerHome')
-      else router.replace('/screens/ProviderHome')
+      if (role === 'seeker') router.replace('/(seeker_tabs)/Seeker_Home')
+      else router.replace('/(provider_tabs)/Provider_Home')
     }
   }, [])
 
   return (
     <View className="flex-1 bg-neutralBase">
-      {/* Header */}
-      <View className="bg-primary p-6 flex-row items-center justify-center shadow-subtle">
-        <Image
-          source={require('../../assets/icon.png')}
-          style={{ width: 40, height: 40, marginRight: 8 }}
-        />
-        <Text className="text-white text-2xl font-bold">FixIt Services</Text>
-      </View>
+      <Header />
 
       {/* Center Card */}
       <View className="flex-1 justify-center items-center px-4">

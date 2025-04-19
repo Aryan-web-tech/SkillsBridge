@@ -1,5 +1,6 @@
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import BottomNavbar from '../components/BottomNavbar';
+import Header from '../components/Header';
 
 export default function ProviderHome() {
   // Sample dummy data (replace with real API data later)
@@ -40,6 +41,7 @@ export default function ProviderHome() {
 
   return (
     <ScrollView style={styles.container}>
+      <Header/>
       <Text style={styles.businessName}>{businessName}</Text>
 
       {/* Stats Section */}
@@ -67,9 +69,6 @@ export default function ProviderHome() {
         </View>
       ))}
 
-      <View className="h-16 border-t border-gray-200 ">
-        <BottomNavbar />
-      </View>
     </ScrollView>
   );
 }

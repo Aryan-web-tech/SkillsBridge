@@ -2,6 +2,7 @@ import { View, Text, TextInput, TouchableOpacity, Alert, ScrollView } from 'reac
 import React, { useState } from 'react';
 import { useRouter,Link } from 'expo-router';
 import { useAuthStore } from '@/store/authStore';
+import Header from '../components/Header';
 
 const ProviderRegister = () => {
   const router = useRouter()
@@ -28,13 +29,14 @@ const ProviderRegister = () => {
         Alert.alert('Registered successfully!', '', [
             {
               text: 'OK',
-              onPress: () => router.replace('/screens/ProviderHome'), // Navigate after pressing OK
+              onPress: () => router.replace('/(provider_tabs)/Provider_Home'), // Navigate after pressing OK
             },
           ]); 
   };
 
   return (
     <ScrollView contentContainerStyle={{ flexGrow: 1 }} className="p-6 bg-white">
+      <Header />
       <View className="items-center mb-6">
         <Text className="text-2xl font-extrabold text-primary text-primary">Provider Registration</Text>
       </View>
