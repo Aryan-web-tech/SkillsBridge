@@ -1,11 +1,13 @@
 import { useRouter } from 'expo-router';
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import Header from '../components/Header';
 
 const RoleSelectionScreen = () => {
   const router = useRouter()
   return (
     <View style={styles.container}>
+      <Header />
       <Text style={[styles.title]}>Select Your Role</Text>
       <TouchableOpacity
         style={styles.button}
